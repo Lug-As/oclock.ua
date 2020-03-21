@@ -1,0 +1,19 @@
+{
+    "name": "sokol/oclock.ua",
+    "description": "E-shop",
+    "type": "project",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Sokol Artyom",
+            "email": "skaliushartem@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "oclock\\": "vendor/oclock/core",
+            "app\\": "app"
+        }
+    },
+    "require": {}
+}
