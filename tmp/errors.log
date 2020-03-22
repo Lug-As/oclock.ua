@@ -1,45 +1,78 @@
-[2020-03-22 13:51:06]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 20:44:24]
+    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 44
 =====================
-[2020-03-22 13:51:20]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 20:56:59]
+    Текст ошибки: Контроллер PageViewMiewController не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 41
 =====================
-[2020-03-22 13:51:22]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 20:57:50]
+    Текст ошибки: Контроллер PageViewMiewController не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 43
 =====================
-[2020-03-22 13:51:41]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 20:59:42]
+    Текст ошибки: Контроллер PageViewMiewController не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 43
 =====================
-[2020-03-22 13:51:43]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 21:10:56]
+    Текст ошибки: Контроллер PageViewMiewController не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 43
 =====================
-[2020-03-22 13:51:44]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 21:11:03]
+    Текст ошибки: Контроллер PageViewMiewController не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 44
 =====================
-[2020-03-22 13:51:44]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 21:11:24]
+    Текст ошибки: Контроллер PageViewMiewController не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 44
 =====================
-[2020-03-22 13:51:45]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 21:12:01]
+    Текст ошибки: Контроллер PageViewMiewController не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 42
 =====================
-[2020-03-22 13:51:45]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 21:13:57]
+    Текст ошибки: Контроллер PageViewMiewController не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 42
 =====================
-[2020-03-22 13:51:46]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 21:13:59]
+    Текст ошибки: Контроллер MainController не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 42
 =====================
-[2020-03-22 13:51:47]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 21:14:41]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
 =====================
-[2020-03-22 13:51:47]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 21:16:22]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
 =====================
-[2020-03-22 13:51:50]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 21:16:38]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
 =====================
-[2020-03-22 13:51:53]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 21:16:40]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
 =====================
-[2020-03-22 13:52:11]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\public\index.php | Строка: 8
+[2020-03-22 21:16:40]
+    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 45
+=====================
+[2020-03-22 21:16:53]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
+=====================
+[2020-03-22 21:17:01]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
+=====================
+[2020-03-22 21:17:02]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
+=====================
+[2020-03-22 21:20:09]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
+=====================
+[2020-03-22 21:20:10]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
+=====================
+[2020-03-22 21:20:24]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
+=====================
+[2020-03-22 21:20:31]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
+=====================
+[2020-03-22 21:21:22]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 40
+=====================
+[2020-03-22 21:21:22]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 40
+=====================
+[2020-03-22 21:21:31]
+    Текст ошибки: Экшен MainController::indexAction не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 39
+=====================
+[2020-03-22 21:21:40]
+    Текст ошибки: Call to undefined function indexAction() | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 36
 =====================
