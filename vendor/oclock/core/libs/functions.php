@@ -1,6 +1,6 @@
 <?php
 
-function deb($var, $title = "")
+function debug($var, $title = "")
 {
 	echo "<pre>";
 	if ( $title != "" ) {

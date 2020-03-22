@@ -2,6 +2,7 @@
 
 define("DEBUG", 1);
 define("ROOT", dirname(__DIR__) );
+define("WWW", ROOT . "/public");
 define("APP", ROOT . "/app");
 define("CORE", ROOT . "/vendor/oclock/core");
 define("LIBS", ROOT . "/vendor/oclock/core/libs");
