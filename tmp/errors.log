@@ -76,3 +76,51 @@
 [2020-03-22 21:21:40]
     Текст ошибки: Call to undefined function indexAction() | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 36
 =====================
+[2020-03-23 08:15:59]
+    Текст ошибки: Контроллер PageMewVewController не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 42
+=====================
+[2020-03-23 08:27:49]
+    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 47
+=====================
+[2020-03-23 08:28:17]
+    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 46
+=====================
+[2020-03-23 10:09:14]
+    Текст ошибки: Контроллер AppController не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 42
+=====================
+[2020-03-23 10:09:43]
+    Текст ошибки: Контроллер AppController не найден | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 42
+=====================
+[2020-03-23 10:10:18]
+    Текст ошибки: syntax error, unexpected '/', expecting '{' | Файл: W:\domains\oclock.ua\app\controllers\MainController.php | Строка: 7
+=====================
+[2020-03-23 10:12:29]
+    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 45
+=====================
+[2020-03-23 10:42:41]
+    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 46
+=====================
+[2020-03-23 10:43:00]
+    Текст ошибки: Call to undefined method app\controllers\MainController::getView() | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 38
+=====================
+[2020-03-23 10:51:40]
+    Текст ошибки: Не найден такой вид! | Файл: W:\domains\oclock.ua\vendor\oclock\core\base\View.php | Строка: 41
+=====================
+[2020-03-23 10:52:11]
+    Текст ошибки: Не найден вид W:\domains\oclock.ua/app/view/Main/index.php! | Файл: W:\domains\oclock.ua\vendor\oclock\core\base\View.php | Строка: 41
+=====================
+[2020-03-23 10:52:17]
+    Текст ошибки: Не найден вид W:\domains\oclock.ua/app/view/Main/index.php | Файл: W:\domains\oclock.ua\vendor\oclock\core\base\View.php | Строка: 41
+=====================
+[2020-03-23 10:52:41]
+    Текст ошибки: Не найден вид W:\domains\oclock.ua/app/vies/Main/index.php | Файл: W:\domains\oclock.ua\vendor\oclock\core\base\View.php | Строка: 41
+=====================
+[2020-03-23 11:00:03]
+    Текст ошибки: syntax error, unexpected '/' | Файл: W:\domains\oclock.ua\vendor\oclock\core\base\View.php | Строка: 46
+=====================
+[2020-03-23 11:02:05]
+    Текст ошибки: Не найден шаблон W:\domains\oclock.ua/app/views/layouts/.php | Файл: W:\domains\oclock.ua\vendor\oclock\core\base\View.php | Строка: 51
+=====================
+[2020-03-23 11:03:18]
+    Текст ошибки: Не найден шаблон W:\domains\oclock.ua/app/views/layouts/.php | Файл: W:\domains\oclock.ua\vendor\oclock\core\base\View.php | Строка: 52
+=====================

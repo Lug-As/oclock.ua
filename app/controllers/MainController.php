@@ -4,10 +4,12 @@
 namespace app\controllers;
 
 
-class MainController
+use app\controllers\app\AppController;
+
+class MainController extends AppController
 {
 	public function indexAction()
 	{
-		echo "Hello from Main Controller!!!!";
+//		echo "Метод: " . __METHOD__;
 	}
 }

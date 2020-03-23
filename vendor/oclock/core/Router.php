@@ -27,14 +27,15 @@ class Router
 	public static function dispatch($url)
 	{
 		if ( self::matchRoute($url) ){
-			$controllerName = self::camelCase(self::$route["controller"], true)."Controller";
-			$action = self::camelCase(self::$route["action"])."Action";
-			$prefix = self::camelCase(self::$route["prefix"]);
+			$controllerName = self::$route["controller"]."Controller";
+			$action = self::$route["action"]."Action";
+			$prefix = self::$route["prefix"];
 			$controller = "app\controllers\\{$prefix}{$controllerName}";
 			if ( class_exists($controller) ){
-				$controller = new $controller(self::$route);
-				if ( method_exists($controller, $action) ){
-					$controller->$action();
+				$controllerObject = new $controller(self::$route);
+				if ( method_exists($controllerObject, $action) ){
+					$controllerObject->$action();
+					$controllerObject->getView();
 				} else {
 					throw new \Exception("Экшен $controllerName::$action не найден", 404);
 				}
@@ -64,6 +65,8 @@ class Router
 				else {
 					$route["prefix"] .= "\\";
 				}
+				$route["controller"] = self::camelCase($route["controller"], true);
+				$route["action"] = self::camelCase($route["action"]);
 				self::$route = $route;
 				return true;
 			}
