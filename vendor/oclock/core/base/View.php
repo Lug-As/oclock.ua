@@ -34,6 +34,9 @@ class View
 
 	public function render($data)
 	{
+		if ( is_array($data) ) {
+			extract($data);
+		}
 		$viewFile = APP . "/views/{$this->prefix}{$this->controller}/{$this->view}.php";
 		if ( file_exists($viewFile) ){
 			ob_start();
@@ -45,6 +48,9 @@ class View
 		if ($this->layout !== false){
 			$layoutFile = APP."/views/layouts/{$this->layout}.php";
 			if ( file_exists($layoutFile) ){
+				$title = $this->meta['title'];
+				$desc = $this->meta['desc'];
+				$keywords = $this->meta['keywords'];
 				require $layoutFile;
 			} else {
 				throw new \Exception("Не найден шаблон {$layoutFile}", 500);

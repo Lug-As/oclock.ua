@@ -1,5 +1,5 @@
 [2020-03-22 20:44:24]
-    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 44
+ Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 44
 =====================
 [2020-03-22 20:56:59]
     Текст ошибки: Контроллер PageViewMiewController не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 41
@@ -123,4 +123,7 @@
 =====================
 [2020-03-23 11:03:18]
     Текст ошибки: Не найден шаблон W:\domains\oclock.ua/app/views/layouts/.php | Файл: W:\domains\oclock.ua\vendor\oclock\core\base\View.php | Строка: 52
+=====================
+[2020-03-23 21:34:52]
+    Текст ошибки: Страница не найдена | Файл: W:\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 46
 =====================

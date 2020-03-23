@@ -5,11 +5,15 @@ namespace app\controllers;
 
 
 use app\controllers\app\AppController;
+use oclock\App;
 
 class MainController extends AppController
 {
 	public function indexAction()
 	{
-//		echo "Метод: " . __METHOD__;
+		$name = 'Bogdan';
+		$age = 19;
+		$this->setData( compact('name', 'age') );
+		$this->setMeta(App::$app->getProperty('shop_name'), "Магазин часов", ['Часы']);
 	}
 }

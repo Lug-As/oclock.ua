@@ -13,7 +13,7 @@ class Controller
 	protected $prefix;
 	protected $layout;
 	protected $data = [];
-	protected $meta = [];
+	protected $meta = ['title' => '', 'desc' => '', 'keywords' => ''];
 
 	public function __construct($route)
 	{
