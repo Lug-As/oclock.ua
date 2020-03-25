@@ -6,7 +6,7 @@ define("WWW", ROOT . "/public");
 define("APP", ROOT . "/app");
 define("CORE", ROOT . "/vendor/oclock/core");
 define("LIBS", ROOT . "/vendor/oclock/core/libs");
-define("CASH", ROOT . "/tmp/cache");
+define("CACHE", ROOT . "/tmp/cache");
 define("CONF", ROOT . "/config");
 define("LAYOUT", "default");
 

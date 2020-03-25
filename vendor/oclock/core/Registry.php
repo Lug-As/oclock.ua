@@ -6,7 +6,7 @@ namespace oclock;
 
 class Registry
 {
-	use TSingletone;
+	use TSingleton;
 
 	protected static $properties = [];
 

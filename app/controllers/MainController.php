@@ -6,6 +6,7 @@ namespace app\controllers;
 
 use app\controllers\app\AppController;
 use oclock\App;
+use oclock\Cache;
 
 class MainController extends AppController
 {

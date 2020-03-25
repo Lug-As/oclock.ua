@@ -8,7 +8,7 @@ use RedBeanPHP\R;
 
 class DB
 {
-    use TSingletone;
+    use TSingleton;
 
     protected function __construct()
     {

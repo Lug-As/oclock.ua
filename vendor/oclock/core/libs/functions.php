@@ -8,3 +8,12 @@ function debug($var, $title = "")
 	}
 	echo print_r($var, true) . "</pre>";
 }
+
+function getRlogs(){
+    $logs = \RedBeanPHP\R::getDatabaseAdapter()
+            ->getDatabase()
+            ->getLogger();
+
+    debug( $logs->grep( 'SELECT' ) );
+    return $logs;
+}

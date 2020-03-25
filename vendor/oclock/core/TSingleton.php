@@ -4,9 +4,11 @@
 namespace oclock;
 
 
-trait TSingletone
+trait TSingleton
 {
 	private static $instance;
+
+    protected function __construct() {}
 
 	public static function instance()
 	{
