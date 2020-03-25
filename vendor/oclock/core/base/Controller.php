@@ -4,7 +4,7 @@
 namespace oclock\base;
 
 
-class Controller
+abstract class Controller
 {
 	protected $route;
 	protected $model;

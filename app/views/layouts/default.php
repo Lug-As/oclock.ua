@@ -16,5 +16,13 @@
         <?php debug($name, 'name'); ?>
         <?php debug($age, 'age'); ?>
     </div>
+
+<?php
+    $logs = \RedBeanPHP\R::getDatabaseAdapter()
+            ->getDatabase()
+            ->getLogger();
+
+    debug( $logs->grep( 'SELECT' ) );
+?>
 </body>
 </html>

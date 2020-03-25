@@ -49,6 +49,7 @@ class Router
 
 	protected static function matchRoute($url)
 	{
+		$url = self::removeGetString($url);
 		foreach (self::$routes as $pattern => $route) {
 			if ( preg_match("#{$pattern}#", $url, $matches) ){
 				foreach ($matches as $key => $value) {
@@ -87,5 +88,13 @@ class Router
 			}
 		}
 		return $out;
+	}
+
+	protected static function removeGetString($url)
+	{
+		$url = explode('&', $url, 2);
+		if ( strpos($url[0], "=") === false ){
+			return $url[0];
+		} else return '';
 	}
 }
