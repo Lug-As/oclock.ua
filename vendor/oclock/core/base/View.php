@@ -16,6 +16,7 @@ class View
 	protected $layout;
 	protected $data = [];
 	protected $meta = [];
+	protected $scripts;
 
 	public function __construct($route, $layout = "", $view = "", $meta = "")
 	{
@@ -42,19 +43,30 @@ class View
 			ob_start();
 			require $viewFile;
 			$content = ob_get_clean();
+			$content = $this->cutScripts($content);
 		} else {
 			throw new \Exception("Не найден вид {$viewFile}", 500);
 		}
 		if ($this->layout !== false){
 			$layoutFile = APP."/views/layouts/{$this->layout}.php";
 			if ( file_exists($layoutFile) ){
-				$title = $this->meta['title'];
-				$desc = $this->meta['desc'];
-				$keywords = $this->meta['keywords'];
+				$meta = $this->meta;
+				$scripts = $this->scripts;
 				require $layoutFile;
 			} else {
 				throw new \Exception("Не найден шаблон {$layoutFile}", 500);
 			}
 		}
+	}
+
+    protected function cutScripts($content)
+    {
+        $pattern = '@<script.*?>.*?</script>@si';
+        preg_match_all($pattern, $content, $this->scripts);
+        if ( !empty($this->scripts) ){
+            preg_replace($pattern, '', $content);
+        }
+        $this->scripts = $this->scripts[0];
+        return $content;
 	}
 }
