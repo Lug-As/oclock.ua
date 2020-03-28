@@ -6,7 +6,6 @@ namespace app\controllers;
 
 use app\controllers\app\AppController;
 use oclock\App;
-use oclock\Cache;
 use RedBeanPHP\R;
 
 class MainController extends AppController

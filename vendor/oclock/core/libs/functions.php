@@ -17,3 +17,13 @@ function getRlogs(){
     debug( $logs->grep( 'SELECT' ) );
     return $logs;
 }
+
+function redirect($http = false){
+    if ($http) {
+        $redirect = $http;
+    } else {
+        $redirect = $_SERVER['HTTP_REFERER'] ?? PATH;
+    }
+    header("Location: {$redirect}");
+    die;
+}

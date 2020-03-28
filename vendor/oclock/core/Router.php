@@ -43,7 +43,7 @@ class Router
 				throw new \Exception("Контроллер $controllerName не найден", 404);
 			}
 		} else {
-			throw new \Exception("Страница не найдена", 404);
+			throw new \Exception("Страница {$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']} не найдена", 404);
 		}
 	}
 
