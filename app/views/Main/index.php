@@ -38,7 +38,9 @@
 </div>
 <!--about-end-->
 <?php endif; ?>
-<?php if ( !empty($hits) ): ?>
+<?php if ( !empty($hits) ):
+$curr = \oclock\App::$app->getProperty('currency');
+?>
 <!--product-starts-->
 <div class="product"> 
 	<div class="container">
@@ -51,15 +53,15 @@
 						<div class="product-bottom">
 							<h3><?= $hit['title']; ?></h3>
 							<p>Explore Now</p>
-							<h4><a class="add-to-cart-link" href="cart/add?id=<?= $hit['id']; ?>"><i></i></a> <span class=" item_price">$ <?= $hit['price']; ?></span>
+							<h4><a class="add-to-cart-link" href="cart/add?id=<?= $hit['id']; ?>"><i></i></a> <span class=" item_price"><?=$curr['symbol_left'] . round($hit['price'] * $curr['value']) . $curr['symbol_right']; ?></span>
                             <?php if ($hit['old_price']): ?>
-                                <small><del><?= $hit['old_price']; ?></del></small>
+                                <small><del><?= $curr['symbol_left'] . round($hit['old_price'] * $curr['value']) . $curr['symbol_right']; ?></del></small>
                             <?php endif; ?>
                             </h4>
 						</div>
                         <?php if ($hit['old_price']): ?>
                         <div class="srch">
-							<span><?= 100*round($hit->price/$hit->old_price, 3) - 100 ?>%</span>
+							<span><?= 100 - 100*round($hit->price/$hit->old_price, 3) ?>%</span>
 						</div>
                         <?php endif; ?>
 					</div>
