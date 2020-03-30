@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ea66b60e51c4e3abdcdbdccf7ded491",
+    "content-hash": "7f0582a379ff340b37e877632d04e4dd",
     "packages": [
         {
             "name": "gabordemooij/redbean",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gabordemooij/redbean.git",
-                "reference": "fcc0de13f886d599c790b996a73635e95870a95a"
+                "reference": "c4b5d5614a2899ad200f2fcef86df8932c337409"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gabordemooij/redbean/zipball/fcc0de13f886d599c790b996a73635e95870a95a",
-                "reference": "fcc0de13f886d599c790b996a73635e95870a95a",
+                "url": "https://api.github.com/repos/gabordemooij/redbean/zipball/c4b5d5614a2899ad200f2fcef86df8932c337409",
+                "reference": "c4b5d5614a2899ad200f2fcef86df8932c337409",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,56 @@
             "keywords": [
                 "orm"
             ],
-            "time": "2020-03-22T19:16:40+00:00"
+            "time": "2020-03-25T16:55:41+00:00"
+        },
+        {
+            "name": "vlucas/valitron",
+            "version": "v1.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/valitron.git",
+                "reference": "a03072bed1679660200766d134507a30193eaf6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/valitron/zipball/a03072bed1679660200766d134507a30193eaf6d",
+                "reference": "a03072bed1679660200766d134507a30193eaf6d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.5 || ^6.5"
+            },
+            "suggest": {
+                "ext-mbstring": "It can support the multiple bytes string length."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Valitron\\": "src/Valitron"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com"
+                }
+            ],
+            "description": "Simple, elegant, stand-alone validation library with NO dependencies",
+            "homepage": "http://github.com/vlucas/valitron",
+            "keywords": [
+                "valid",
+                "validation",
+                "validator"
+            ],
+            "time": "2019-08-29T19:49:43+00:00"
         }
     ],
     "packages-dev": [],

@@ -6,9 +6,9 @@
 	<meta name="keywords" content="<?= $meta['keywords']; ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
-	<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all">		
+	<link href="<?= PATH; ?>/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+	<link href="<?= PATH; ?>/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link href="<?= PATH; ?>/css/memenu.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body> 
 	<!--top-header-->
@@ -30,6 +30,18 @@
 								<option value="3">German</option>
 							</select>
 						</div>
+						<div class="btn-group">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <?php if(!empty($_SESSION['user'])): ?>
+                                    <li><a href="#">Добро пожаловать, <?=htmlspecialchars($_SESSION['user']['name']);?></a></li>
+                                    <li><a href="<?= PATH; ?>/user/logout">Выход</a></li>
+                                <?php else: ?>
+                                    <li><a href="<?= PATH; ?>/user/login">Вход</a></li>
+                                    <li><a href="<?= PATH; ?>/user/signup">Регистрация</a></li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
 						<div class="clearfix"></div>
 					</div>
 				</div>
@@ -59,156 +71,35 @@
 		<div class="container">
 			<div class="header">
 				<div class="col-md-9 header-left">
-				<div class="top-nav">
-					<ul class="memenu skyblue"><li class="active"><a href="/">Home</a></li>
-						<li class="grid"><a href="#">Men</a>
-							<div class="mepanel">
-								<div class="row">
-									<div class="col1 me-one">
-										<h4>Shop</h4>
-										<ul>
-											<li><a href="products.html">New Arrivals</a></li>
-											<li><a href="products.html">Blazers</a></li>
-											<li><a href="products.html">Swem Wear</a></li>
-											<li><a href="products.html">Accessories</a></li>
-											<li><a href="products.html">Handbags</a></li>
-											<li><a href="products.html">T-Shirts</a></li>
-											<li><a href="products.html">Watches</a></li>
-											<li><a href="products.html">My Shopping Bag</a></li>
-										</ul>
-									</div>
-									<div class="col1 me-one">
-										<h4>Style Zone</h4>
-										<ul>
-											<li><a href="products.html">Shoes</a></li>
-											<li><a href="products.html">Watches</a></li>
-											<li><a href="products.html">Brands</a></li>
-											<li><a href="products.html">Coats</a></li>
-											<li><a href="products.html">Accessories</a></li>
-											<li><a href="products.html">Trousers</a></li>
-										</ul>	
-									</div>
-									<div class="col1 me-one">
-										<h4>Popular Brands</h4>
-										<ul>
-											<li><a href="products.html">499 Store</a></li>
-											<li><a href="products.html">Fastrack</a></li>
-											<li><a href="products.html">Casio</a></li>
-											<li><a href="products.html">Fossil</a></li>
-											<li><a href="products.html">Maxima</a></li>
-											<li><a href="products.html">Timex</a></li>
-											<li><a href="products.html">TomTom</a></li>
-											<li><a href="products.html">Titan</a></li>
-										</ul>		
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="grid"><a href="#">Women</a>
-							<div class="mepanel">
-								<div class="row">
-									<div class="col1 me-one">
-										<h4>Shop</h4>
-										<ul>
-											<li><a href="products.html">New Arrivals</a></li>
-											<li><a href="products.html">Blazers</a></li>
-											<li><a href="products.html">Swem Wear</a></li>
-											<li><a href="products.html">Accessories</a></li>
-											<li><a href="products.html">Handbags</a></li>
-											<li><a href="products.html">T-Shirts</a></li>
-											<li><a href="products.html">Watches</a></li>
-											<li><a href="products.html">My Shopping Bag</a></li>
-										</ul>
-									</div>
-									<div class="col1 me-one">
-										<h4>Style Zone</h4>
-										<ul>
-											<li><a href="products.html">Shoes</a></li>
-											<li><a href="products.html">Watches</a></li>
-											<li><a href="products.html">Brands</a></li>
-											<li><a href="products.html">Coats</a></li>
-											<li><a href="products.html">Accessories</a></li>
-											<li><a href="products.html">Trousers</a></li>
-										</ul>
-									</div>
-									<div class="col1 me-one">
-										<h4>Popular Brands</h4>
-										<ul>
-											<li><a href="products.html">499 Store</a></li>
-											<li><a href="products.html">Fastrack</a></li>
-											<li><a href="products.html">Casio</a></li>
-											<li><a href="products.html">Fossil</a></li>
-											<li><a href="products.html">Maxima</a></li>
-											<li><a href="products.html">Timex</a></li>
-											<li><a href="products.html">TomTom</a></li>
-											<li><a href="products.html">Titan</a></li>
-										</ul>	
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="grid"><a href="#">Kids</a>
-							<div class="mepanel">
-								<div class="row">
-									<div class="col1 me-one">
-										<h4>Shop</h4>
-										<ul>
-											<li><a href="products.html">New Arrivals</a></li>
-											<li><a href="products.html">Blazers</a></li>
-											<li><a href="products.html">Swem Wear</a></li>
-											<li><a href="products.html">Accessories</a></li>
-											<li><a href="products.html">Handbags</a></li>
-											<li><a href="products.html">T-Shirts</a></li>
-											<li><a href="products.html">Watches</a></li>
-											<li><a href="products.html">My Shopping Bag</a></li>
-										</ul>
-									</div>
-									<div class="col1 me-one">
-										<h4>Style Zone</h4>
-										<ul>
-											<li><a href="products.html">Shoes</a></li>
-											<li><a href="products.html">Watches</a></li>
-											<li><a href="products.html">Brands</a></li>
-											<li><a href="products.html">Coats</a></li>
-											<li><a href="products.html">Accessories</a></li>
-											<li><a href="products.html">Trousers</a></li>
-										</ul>	
-									</div>
-									<div class="col1 me-one">
-										<h4>Popular Brands</h4>
-										<ul>
-											<li><a href="products.html">499 Store</a></li>
-											<li><a href="products.html">Fastrack</a></li>
-											<li><a href="products.html">Casio</a></li>
-											<li><a href="products.html">Fossil</a></li>
-											<li><a href="products.html">Maxima</a></li>
-											<li><a href="products.html">Timex</a></li>
-											<li><a href="products.html">TomTom</a></li>
-											<li><a href="products.html">Titan</a></li>
-										</ul>	
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="grid"><a href="typo.html">Blog</a>
-						</li>
-						<li class="grid"><a href="contact.html">Contact</a>
-						</li>
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="col-md-3 header-right"> 
-				<div class="search-bar">
-					<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-					<input type="submit" value="">
-				</div>
-			</div>
-			<div class="clearfix"> </div>
+                    <?php new \app\widgets\menu\Menu([
+                        "table" => "user",
+                    ]); ?>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 header-right">
+                    <div class="search-bar">
+                        <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                        <input type="submit" value="">
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
 	<!--bottom-header-->
+    <?php if ( !empty($_SESSION['errors']) ): ?>
+        <div class="errors">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-danger">
+                            <?php echo $_SESSION['errors']; unset($_SESSION['errors']);?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 	<?= $content; ?>
 	<!--information-starts-->
 	<div class="information">
@@ -274,12 +165,13 @@
 	</div>
 	<!--footer-end-->
 	<!-- scripts -->
-	<script src="js/jquery-1.11.0.min.js"></script>
-	<script src="js/simpleCart.min.js"> </script>
-	<script type="text/javascript" src="js/memenu.js"></script>
+	<script src="<?= PATH; ?>/js/jquery-1.11.0.min.js"></script>
+	<script src="<?= PATH; ?>/js/simpleCart.min.js"> </script>
+	<script src="<?= PATH; ?>/js/memenu.js"></script>
 	<script>$(document).ready(function(){$(".memenu").memenu();});</script>	
-	<script src="js/jquery.easydropdown.js"></script>
-	<script src="js/main.js"></script>
+	<script src="<?= PATH; ?>/js/jquery.easydropdown.js"></script>
+	<script src="<?= PATH; ?>/js/main.js"></script>
+	<script src="<?= PATH; ?>/js/bootstrap.min.js"></script>
     <?php
     foreach ($scripts as $script) {
         echo $script . PHP_EOL;

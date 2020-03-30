@@ -15,6 +15,10 @@ class ComposerStaticInit82fd37cd688b3b2b72c70d71fcc168f3
         array (
             'app\\' => 4,
         ),
+        'V' => 
+        array (
+            'Valitron\\' => 9,
+        ),
         'R' => 
         array (
             'RedBeanPHP\\' => 11,
@@ -29,6 +33,10 @@ class ComposerStaticInit82fd37cd688b3b2b72c70d71fcc168f3
         'app\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Valitron\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vlucas/valitron/src/Valitron',
         ),
         'RedBeanPHP\\' => 
         array (

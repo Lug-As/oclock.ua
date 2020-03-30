@@ -15,7 +15,7 @@ class Currency
 
     public function __construct()
     {
-        $this->tpl = __DIR__ . "/tpl/currency_tpl.php";
+        $this->tpl = __DIR__ . "/template/currency_tpl.php";
         $this->run();
     }
 
@@ -23,7 +23,7 @@ class Currency
     {
         $this->currencies = App::$app->getProperty('currencies');
         $this->currency = App::$app->getProperty('currency');
-        echo $this->getHtml();
+        $this->output();
     }
 
     public static function getCurrencies()
@@ -49,5 +49,10 @@ class Currency
         ob_start();
         require $this->tpl;
         return ob_get_clean();
+    }
+
+    protected function output()
+    {
+        echo $this->getHtml();
     }
 }

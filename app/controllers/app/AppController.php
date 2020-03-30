@@ -6,8 +6,6 @@ namespace app\controllers\app;
 
 use app\models\app\AppModel;
 use oclock\base\Controller;
-use app\widgets\currency\Currency;
-use oclock\App;
 
 class AppController extends Controller
 {
@@ -15,9 +13,5 @@ class AppController extends Controller
     {
         parent::__construct($route);
         new AppModel();
-        $currencies = Currency::getCurrencies();
-        $curr = Currency::getActiveCurrency($currencies);
-	    App::$app->setProperty('currencies', $currencies);
-	    App::$app->setProperty('currency', $curr);
     }
 }

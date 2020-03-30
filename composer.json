@@ -16,6 +16,7 @@
         }
     },
     "require": {
-        "gabordemooij/redbean": "dev-master"
+        "gabordemooij/redbean": "dev-master",
+        "vlucas/valitron": "^1.4"
     }
 }
