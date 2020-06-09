@@ -3,7 +3,7 @@
     <div class="container">
         <div class="breadcrumbs-main">
             <ol class="breadcrumb">
-                <li><a href="<?= PATH ?>">Главная</a></li>
+                <li><a href="/">Главная</a></li>
                 <li>Регистрация</li>
             </ol>
         </div>
@@ -22,7 +22,7 @@
 
                     <div class="register-main">
                         <div class="col-md-6 account-left">
-                            <form method="post" action="<?= PATH ?>/user/signup" id="signup" role="form"  data-toggle="validator">
+                            <form method="post" action="user/signup" id="signup" role="form"  data-toggle="validator">
                                 <div class="form-group">
                                     <label for="login">Логин</label>
                                     <input type="text" name="login" class="form-control" id="login" placeholder="my_login" required>
@@ -53,4 +53,4 @@
     </div>
 </div>
 <!--product-end-->
-<script src="<?= PATH; ?>/js/validator.min.js"></script>
+<script src="js/validator.min.js"></script>

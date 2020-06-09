@@ -2,13 +2,15 @@
 <html>
 <head>
 	<title><?= $meta['title']; ?></title>
+    <base href="/">
 	<meta name="description" content="<?= $meta['description']; ?>">
 	<meta name="keywords" content="<?= $meta['keywords']; ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link href="<?= PATH; ?>/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-	<link href="<?= PATH; ?>/css/style.css" rel="stylesheet" type="text/css" media="all">
-	<link href="<?= PATH; ?>/css/memenu.css" rel="stylesheet" type="text/css" media="all">
+    <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body> 
 	<!--top-header-->
@@ -31,17 +33,17 @@
 							</select>
 						</div>
 						<div class="btn-group">
-                            <a class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <?php if(!empty($_SESSION['user'])): ?>
-                                    <li><a href="#">Добро пожаловать, <?=htmlspecialchars($_SESSION['user']['name']);?></a></li>
-                                    <li><a href="<?= PATH; ?>/user/logout">Выход</a></li>
-                                <?php else: ?>
-                                    <li><a href="<?= PATH; ?>/user/login">Вход</a></li>
-                                    <li><a href="<?= PATH; ?>/user/signup">Регистрация</a></li>
-                                <?php endif; ?>
-                            </ul>
-                        </div>
+                        <a class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                           <?php if(!empty($_SESSION['user'])): ?>
+                              <li><a href="#">Добро пожаловать, <?=htmlspecialchars($_SESSION['user']['name']);?></a></li>
+                              <li><a href="<?= PATH; ?>/user/logout">Выход</a></li>
+                           <?php else: ?>
+                              <li><a href="<?= PATH; ?>/user/login">Вход</a></li>
+                              <li><a href="<?= PATH; ?>/user/signup">Регистрация</a></li>
+                           <?php endif; ?>
+                        </ul>
+                     </div>
 						<div class="clearfix"></div>
 					</div>
 				</div>

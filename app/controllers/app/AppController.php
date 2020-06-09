@@ -5,6 +5,7 @@ namespace app\controllers\app;
 
 
 use app\models\app\AppModel;
+use app\models\User;
 use oclock\base\Controller;
 
 class AppController extends Controller
@@ -13,5 +14,6 @@ class AppController extends Controller
     {
         parent::__construct($route);
         new AppModel();
+        User::authentication();
     }
 }

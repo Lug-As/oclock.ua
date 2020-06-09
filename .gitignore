@@ -14,6 +14,9 @@ composer.phar
 ### PHPStorm ###
 .idea/
 
+### Template ###
+template/
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
