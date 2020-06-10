@@ -20,4 +20,11 @@ class CurrencyController extends AppController
         }
         redirect();
     }
+
+    public static function getPriceString($price)
+    {
+        $curr = App::$app->getProperty('currency');
+        $out = $curr['symbol_left'] . round($price * $curr['value']) . $curr['symbol_right'];
+        return $out;
+    }
 }

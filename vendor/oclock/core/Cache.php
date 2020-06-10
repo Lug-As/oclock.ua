@@ -6,13 +6,13 @@ namespace oclock;
 
 class Cache
 {
-    public static function set($key, $data, $seconds = 3600)
+    public static function set($key, $data, int $seconds = 3600)
     {
         if ($seconds > 0) {
             $file = self::filename($key);
             $content['data'] = $data;
             $content['time'] = time() + $seconds;
-            if ( file_put_contents($file, serialize($content)) !== false ){
+            if (file_put_contents($file, serialize($content)) !== false) {
                 return true;
             }
         }
@@ -22,10 +22,10 @@ class Cache
     public static function get($key)
     {
         $file = self::filename($key);
-        if ( file_exists($file) ){
-            $content = unserialize( file_get_contents($file) );
-            if ($content['time'] > time()){
-                return $content;
+        if (file_exists($file)) {
+            $content = unserialize(file_get_contents($file));
+            if ($content['time'] > time()) {
+                return $content['data'];
             }
             self::delete($key);
         }
@@ -35,7 +35,7 @@ class Cache
     public static function delete($key)
     {
         $file = self::filename($key);
-        if ( file_exists($file) ){
+        if (file_exists($file)) {
             unlink($file);
             return true;
         }
@@ -44,7 +44,7 @@ class Cache
 
     protected static function filename($key)
     {
-        $file = CACHE . "/". md5($key) . ".txt";
+        $file = CACHE . "/" . md5($key) . ".txt";
         return $file;
     }
 }

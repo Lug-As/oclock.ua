@@ -1680,7 +1680,6 @@ a.add-cart {
     padding: 0.4em 0.8em;
     font-size: 1.15em;
     text-transform: uppercase;
-    margin-top: 2em;
     display: inline-block;
 }
 a.add-cart:hover {
@@ -3066,7 +3065,7 @@ ul.tag-men {
 }
 /*--media-quaries-end-here--*/
 
-/* Style from backender */
+/* Styles from backender */
 .product-left {
 	margin-bottom: 20px;
 }
@@ -3078,4 +3077,30 @@ ul.tag-men {
 }
 .drop > .btn-group > a:hover{
 	text-decoration: none;
+}
+.menu-container {
+	width: 100%;
+	background-color: #fff;
+}
+.menu > ul > li {
+	background-color: #fff;
+}
+.menu > ul > li:hover {
+	background-color: #fff;
+}
+.menu > ul > li:hover > h5 > a {
+	color: #73B6E1;
+}
+.quantity {
+	display: inline-block;
+}
+.quantity input {
+	font-size: 18px;
+	text-align: center;
+}
+.qty-wrap {
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
