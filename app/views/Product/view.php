@@ -4,7 +4,7 @@
         <div class="breadcrumbs-main">
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
-                <li class="active"><?= $product->title ?></li>
+                <?= $breadcrumbs; ?>
             </ol>
         </div>
     </div>

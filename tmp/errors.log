@@ -206,3 +206,18 @@
 [2020-06-10 14:11:09]
     Текст ошибки: Страница oclock.ua/favicon.ico не найдена | Файл: D:\openserver\OSPanel\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 46
 =====================
+[2020-06-10 17:01:12]
+    Текст ошибки: syntax error, unexpected 'debug' (T_STRING), expecting ';' | Файл: D:\openserver\OSPanel\domains\oclock.ua\app\models\Breadcrumbs.php | Строка: 31
+=====================
+[2020-06-10 17:01:13]
+    Текст ошибки: syntax error, unexpected 'debug' (T_STRING), expecting ';' | Файл: D:\openserver\OSPanel\domains\oclock.ua\app\models\Breadcrumbs.php | Строка: 31
+=====================
+[2020-06-10 17:21:22]
+    Текст ошибки: Контроллер CategoryController не найден | Файл: D:\openserver\OSPanel\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 43
+=====================
+[2020-06-10 17:21:25]
+    Текст ошибки: Контроллер CategoryController не найден | Файл: D:\openserver\OSPanel\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 43
+=====================
+[2020-06-10 18:00:35]
+    Текст ошибки: Страница oclock.ua/favicon.ico не найдена | Файл: D:\openserver\OSPanel\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 46
+=====================

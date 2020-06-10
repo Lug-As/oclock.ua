@@ -5,6 +5,7 @@ namespace app\controllers;
 
 
 use app\controllers\app\AppController;
+use app\models\Breadcrumbs;
 use app\models\Product;
 use RedBeanPHP\R;
 
@@ -17,6 +18,7 @@ class ProductController extends AppController
 		if (!$product) {
 			throw new \Exception('Страница не найдена', 404);
 		}
+		// Modifications
 		$mods = $product->ownModificationList;
 		// Gallery
 		$photos = R::find('gallery', '`product_id` = ?', [2]);
@@ -28,9 +30,9 @@ class ProductController extends AppController
 		// Recently viewed
 		$r_viewed = $model->getRecentlyViewed();
 		// Breadcrumbs
-
+		$breadcrumbs = Breadcrumbs::getBreadcrumbs($product->category_id, $product->title);
 		// Set meta & data
 		$this->setMeta($product->title, $product->description, $product->keywords);
-		$this->setData(compact('product', 'mods', 'relProducts', 'photos', 'r_viewed'));
+		$this->setData(compact('product', 'mods', 'relProducts', 'photos', 'r_viewed', 'breadcrumbs'));
 	}
 }
