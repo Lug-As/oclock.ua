@@ -21,7 +21,7 @@ class ProductController extends AppController
 		// Modifications
 		$mods = $product->ownModificationList;
 		// Gallery
-		$photos = R::find('gallery', '`product_id` = ?', [2]);
+		$photos = R::find('gallery', '`product_id` = ?', [$product->id]);
 		// Related products
 		$relProducts = R::getAll("SELECT * FROM `related_product` JOIN `product` ON `product`.`id` = `related_product`.`related_id` WHERE `related_product`.`product_id` = ?", [$product->id]);
 		// Cookie

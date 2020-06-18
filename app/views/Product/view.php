@@ -4,7 +4,7 @@
         <div class="breadcrumbs-main">
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
-                <?= $breadcrumbs; ?>
+					<?= $breadcrumbs; ?>
             </ol>
         </div>
     </div>
@@ -16,8 +16,8 @@
         <div class="single-main">
             <div class="col-md-9 single-main-left">
                 <div class="sngl-top">
-						 <?php if ($photos): ?>
-                       <div class="col-md-5 single-top-left">
+                    <div class="col-md-5 single-top-left">
+							  <?php if ($photos): ?>
                            <div class="flexslider">
                                <ul class="slides">
 											 <?php foreach ($photos as $photo): ?>
@@ -29,8 +29,12 @@
 											 <?php endforeach; ?>
                                </ul>
                            </div>
-                       </div>
-						 <?php endif; ?>
+							  <?php else: ?>
+                           <div class="product-image-wrap">
+                               <img class="product-image" src="images/<?= $product->img; ?>" alt="<?= $product->title ?>">
+                           </div>
+							  <?php endif; ?>
+                    </div>
                     <div class="col-md-7 single-top-right">
                         <div class="single-para simpleCart_shelfItem">
                             <h2><?= $product->title ?></h2>
@@ -48,10 +52,10 @@
                                 <div class="clearfix"></div>
                             </div>
                             <h5 class="item_price">
-										 <?= app\controllers\CurrencyController::getPriceString($product->price) ?>
+                                <span id="product-price"><?= app\controllers\CurrencyController::getPriceString($product->price) ?></span>
 										 <?php if ($product->old_price): ?>
                                    <small>
-                                       <del><?= app\controllers\CurrencyController::getPriceString($product->old_price); ?></del>
+                                       <del id="product-price_old"><?= app\controllers\CurrencyController::getPriceString($product->old_price); ?></del>
                                    </small>
 										 <?php endif; ?>
                             </h5>
@@ -63,18 +67,15 @@
                                 <ul>
 											  <?php if ($mods): ?>
                                        <li>Color
-                                           <select>
+                                           <select id="mod-select">
+                                               <option data-price="<?= $product->price; ?>" value="0">Базовый цвет
+                                               </option>
 															 <?php foreach ($mods as $mod): ?>
-                                                  <option><?= $mod->title; ?></option>
+                                                  <option value="<?= $mod->id; ?>" data-price="<?= $mod->price; ?>"
+                                                          data-color="<?= $mod->title; ?>"><?= $mod->title; ?></option>
 															 <?php endforeach; ?>
                                            </select></li>
 											  <?php endif; ?>
-                                    <li class="size-in">Size
-                                        <select>
-                                            <option>Large</option>
-                                            <option>Medium</option>
-                                            <option>Small</option>
-                                        </select></li>
                                     <div class="clearfix"></div>
                                 </ul>
                             </div>

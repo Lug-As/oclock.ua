@@ -41,4 +41,32 @@ abstract class Controller
 		$this->meta['description'] = $desc;
 		$this->meta['keywords'] = $keywords;
 	}
+
+	public function loadView($view, $vars = [])
+	{
+		extract($vars);
+		require APP . "/views/{$this->prefix}{$this->controller}/{$view}.php";
+		die;
+	}
+
+	public function dieOrGoAway()
+	{
+		if ($this->isAjax()) {
+			die;
+		}
+		redirect();
+	}
+
+	public function viewOrGoAway($view, $vars = [])
+	{
+		if ($this->isAjax()) {
+			$this->loadView($view, $vars);
+		}
+		redirect();
+	}
+
+	public function isAjax()
+	{
+		return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && (strtolower(getenv('HTTP_X_REQUESTED_WITH')) === 'xmlhttprequest');
+	}
 }

@@ -52,12 +52,16 @@
             </div>
             <div class="col-md-6 top-header-left">
                 <div class="cart box_1">
-                    <a href="checkout.html">
-                        <div class="total">
-                            <span class="simpleCart_total"></span></div>
+                    <a href="cart/show" class="show-cart">
                         <img src="images/cart-1.png" alt="">
+                        <div class="total">
+									<?php if (isset($_SESSION['cart']['sum']) and $_SESSION['cart']['sum'] > 0): ?>
+                               <span class="simpleCart_total"><?= \app\controllers\CurrencyController::getPriceString($_SESSION['cart']['sum']); ?></span>
+									<?php else: ?>
+                               <span class="simpleCart_total">Empty Cart</span>
+									<?php endif; ?>
+                        </div>
                     </a>
-                    <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -86,11 +90,10 @@
                 <div class="clearfix"></div>
             </div>
             <div class="col-md-3 header-right">
-                <div class="search-bar">
-                    <input type="text" value="Search" onfocus="this.value = '';"
-                           onblur="if (this.value == '') {this.value = 'Search';}">
+                <form action="search" class="search-bar" method="GET" autocomplete="off">
+                    <input type="text" name="query" id="typeahead" class="typeahead" placeholder="Search">
                     <input type="submit" value="">
-                </div>
+                </form>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -111,6 +114,7 @@
         </div>
     </div>
 <?php endif; ?>
+<?php //debug($_SESSION, 'Session'); //session_destroy(); ?>
 <?= $content; ?>
 <!--information-starts-->
 <div class="information">
@@ -176,12 +180,33 @@
     </div>
 </div>
 <!--footer-end-->
+<!--modal-->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Корзина</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
+                <a href="cart/view" type="button" class="btn btn-primary">Оформить заказ</a>
+                <button type="button" class="btn btn-danger clear-cart">Очистить корзину</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal end-->
 <!-- scripts -->
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/simpleCart.min.js"></script>
+<script src="js/typeahead.bundle.js"></script>
 <script src="js/jquery.easydropdown.js"></script>
-<script type="text/javascript">
+<script>
     $(function () {
         var menu_ul = $('.menu_drop > li > ul'),
             menu_a = $('.menu_drop > li > a');
@@ -216,6 +241,13 @@ foreach ($scripts as $script) {
 	echo $script;
 }
 ?>
+<?php $curr = \oclock\App::$app->getProperty('currency'); ?>
+<script>
+    let path = "<?= PATH; ?>",
+        course = "<?= $curr['value']; ?>",
+        sLeft = "<?= $curr['symbol_left']; ?>";
+    sRight = "<?= $curr['symbol_right']; ?>";
+</script>
 <script src="js/main.js"></script>
 </body>
 </html>
