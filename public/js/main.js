@@ -37,7 +37,7 @@ $('#mod-select').change(function () {
         pricePlace = $('#product-price')[0],
         pricePlaceOld = $('#product-price_old')[0];
     if (pricePlaceOld) {
-        let oldToNew = (+/\d+/.exec(pricePlaceOld.innerText)) / (+/\d+/.exec(pricePlace.innerText));
+        let oldToNew = (getNumFromString(pricePlaceOld.innerText)) / (getNumFromString(pricePlace.innerText));
         pricePlaceOld.innerText = sLeft + Math.round(price * course * oldToNew) + sRight;
     }
     pricePlace.innerText = sLeft + Math.round(price * course) + sRight;
@@ -115,4 +115,17 @@ $('body').on('click', ".clear-cart", function (e) {
 function showCart(code) {
     $('.modal-body').html(code);
     $('#cart').modal();
+    let $cart_price = $('.cart_price'),
+        $top_cart_price = $('#top_cart_price');
+    if ($cart_price[0]) {
+        let price = getNumFromString($cart_price[0].innerText);
+        $top_cart_price.text(sLeft + price + sRight);
+    }
+    else {
+        $top_cart_price.text('Empty Cart')
+    }
+}
+
+function getNumFromString(string) {
+    return +/\d+/.exec(string);
 }

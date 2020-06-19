@@ -56,9 +56,9 @@
                         <img src="images/cart-1.png" alt="">
                         <div class="total">
 									<?php if (isset($_SESSION['cart']['sum']) and $_SESSION['cart']['sum'] > 0): ?>
-                               <span class="simpleCart_total"><?= \app\controllers\CurrencyController::getPriceString($_SESSION['cart']['sum']); ?></span>
+                               <span class="simpleCart_total" id="top_cart_price"><?= \app\controllers\CurrencyController::getPriceString($_SESSION['cart']['sum']); ?></span>
 									<?php else: ?>
-                               <span class="simpleCart_total">Empty Cart</span>
+                               <span class="simpleCart_total" id="top_cart_price">Empty Cart</span>
 									<?php endif; ?>
                         </div>
                     </a>
@@ -91,7 +91,8 @@
             </div>
             <div class="col-md-3 header-right">
                 <form action="search" class="search-bar" method="GET" autocomplete="off">
-                    <input type="text" name="query" id="typeahead" class="typeahead" placeholder="Search">
+                    <input type="text" name="query" id="typeahead" class="typeahead" placeholder="Search"
+                           value="<?= isset($_GET['query']) ? safeHtmlChars(trim($_GET['query'])) : ''; ?>">
                     <input type="submit" value="">
                 </form>
             </div>

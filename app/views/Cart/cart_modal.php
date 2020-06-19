@@ -33,7 +33,7 @@ if (isset($_SESSION['cart']['list']) and $_SESSION['cart']['list']):
     </tr>
     <tr>
         <td>Общая сумма</td>
-        <td colspan="5" class="text-right"><?= \app\controllers\CurrencyController::getPriceString($cart['sum']); ?></td>
+        <td colspan="5" class="text-right cart_price"><?= \app\controllers\CurrencyController::getPriceString($cart['sum']); ?></td>
     </tr>
     </tbody>
 </table>

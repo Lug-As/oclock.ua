@@ -10,8 +10,15 @@ class SearchController extends app\AppController
 {
 	public function indexAction()
 	{
-		debug($_GET['query']);
-		die;
+		if (isset($_GET['query'])) {
+			$query = trim($_GET['query']);
+			$products = R::find('product', '`title` LIKE ?', ['%' . $query . '%']);
+		} else {
+			$query = '';
+			$products = [];
+		}
+		$this->setData(compact('query', 'products'));
+		$this->setMeta('Поиск по запросу "' . safeHtmlChars($query) . '"');
 	}
 
 	public function previewAction()
@@ -22,5 +29,11 @@ class SearchController extends app\AppController
 			echo json_encode($products);
 		}
 		$this->dieOrGoAway();
+	}
+
+	public static function getMatchedString($str, $query)
+	{
+		$str = str_ireplace($query, "<span style='color: #2979ff'>{$query}</span>", $str);
+		return $str;
 	}
 }
