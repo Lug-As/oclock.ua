@@ -19,17 +19,18 @@
                     <div class="register-top heading">
                         <h2>ACCOUNT</h2>
                     </div>
-
                     <div class="register-main">
                         <div class="col-md-6 account-left">
-                            <form method="post" action="user/signup" id="signup" role="form"  data-toggle="validator">
+                            <form method="post" action="user/login" id="signup" role="form" data-toggle="validator">
                                 <div class="form-group">
                                     <label for="login">Логин</label>
-                                    <input type="text" name="login" class="form-control" id="login" placeholder="my_login" required>
+                                    <input type="text" name="login" class="form-control" id="login"
+                                           placeholder="my_login" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="pasword">Пароль</label>
-                                    <input type="password" name="password" class="form-control" id="pasword" placeholder="Password123" required>
+                                    <input type="password" name="password" class="form-control" id="pasword"
+                                           placeholder="Password123" required>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Войти в аккаунт</button>
                             </form>

@@ -4,20 +4,28 @@
 namespace app\controllers;
 
 
+use app\controllers\app\AppController;
+use app\widgets\pagination\Pagination;
+use oclock\App;
 use RedBeanPHP\R;
 
-class SearchController extends app\AppController
+class SearchController extends AppController
 {
 	public function indexAction()
 	{
 		if (isset($_GET['query'])) {
 			$query = trim($_GET['query']);
-			$products = R::find('product', '`title` LIKE ?', ['%' . $query . '%']);
+			$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+			$perpage = App::$app->getProperty('pagination');
+			$total = R::count('product', '`title` LIKE ?', ['%' . $query . '%']);
+			$pagination = new Pagination($page, $perpage, $total);
+			$offset = $pagination->getOffset();
+			$products = R::find('product', '`title` LIKE ? LIMIT ? OFFSET ?', ['%' . $query . '%', $perpage, $offset]);
 		} else {
 			$query = '';
 			$products = [];
 		}
-		$this->setData(compact('query', 'products'));
+		$this->setData(compact('query', 'products', 'pagination'));
 		$this->setMeta('Поиск по запросу "' . safeHtmlChars($query) . '"');
 	}
 

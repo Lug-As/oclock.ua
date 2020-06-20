@@ -16,7 +16,13 @@
         <div class="prdt-top">
             <div class="col-md-9 prdt-left">
 					<?php if ($products): ?>
+						<?php if ($pagination->getHTML()): ?>
+                       <div class="text-center">
+								  <?= $pagination; ?>
+                       </div>
+						<?php endif; ?>
                    <div class="product-one">
+                       <h4>Найдено товаров: <?= count($products); ?></h4>
 							 <?php foreach ($products as $product): ?>
                           <div class="col-md-4 product-left p-left">
                               <div class="product-main simpleCart_shelfItem">
@@ -49,6 +55,11 @@
 							 <?php endforeach; ?>
                        <div class="clearfix"></div>
                    </div>
+						<?php if ($pagination->getHTML()): ?>
+                       <div class="text-center">
+								  <?= $pagination; ?>
+                       </div>
+						<?php endif; ?>
 					<?php else: ?>
                    <h2 class="text-center text-secondary"><small>Нет результатов по запросу
                            "<strong><?= safeHtmlChars($query); ?></strong>"</small></h2>

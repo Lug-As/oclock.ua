@@ -11,9 +11,9 @@ use RedBeanPHP\R;
 class User extends AppModel
 {
 	public $attributes = [
+		'name' => '',
 		'login' => '',
 		'password' => '',
-		'name' => '',
 		'email' => '',
 		'address' => ''
 	];
@@ -29,7 +29,7 @@ class User extends AppModel
 			['email']
 		],
 		'lengthBetween' => [
-			['password', 6, 30]
+			['password', 6, 50]
 		],
 		'lengthMax' => [
 			['login', 100],
@@ -69,7 +69,7 @@ class User extends AppModel
 
 	public function checkUnique()
 	{
-		$users = R::find('user', "`login` = ?", [
+		$users = R::find('user', "`login` = ? OR `email` = ?", [
 			$this->attributes['login'],
 			$this->attributes['email'],
 		]);

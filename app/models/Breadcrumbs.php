@@ -14,7 +14,9 @@ class Breadcrumbs extends AppModel
 		$cats = App::$app->getProperty('category');
 		$breadcrumbs_array = self::getParts($cats, $category_id);
 		$breadcrumbs = implode("", $breadcrumbs_array);
-		$breadcrumbs .= "<li class='active'>" . $title . "</li>";
+		if ($title) {
+			$breadcrumbs .= "<li class='active'>" . $title . "</li>";
+		}
 		return $breadcrumbs;
 	}
 

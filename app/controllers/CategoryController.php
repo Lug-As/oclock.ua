@@ -5,7 +5,9 @@ namespace app\controllers;
 
 
 use app\controllers\app\AppController;
+use app\models\Breadcrumbs;
 use app\models\Category;
+use app\widgets\pagination\Pagination;
 use oclock\App;
 use RedBeanPHP\R;
 
@@ -26,9 +28,18 @@ class CategoryController extends AppController
 		// Модель категории
 		$cat_model = new Category();
 		$ids = $cat_model->getIds($id);
+		// Пагинация
+		$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+		$perpage = App::$app->getProperty('pagination');
+		$total = R::count('product', '`category_id` IN (' . R::genSlots($ids) . ')', $ids);
+		$pagination = new Pagination($page, $perpage, $total);
+		$offset = $pagination->getOffset();
 		// Продукты
-		$products = R::find('product', '`category_id` IN (?)', [$id]);
+		$bindings = array_merge($ids, [$perpage, $offset]);
+		$products = R::find('product', '`category_id` IN (' . R::genSlots($ids) . ') LIMIT ? OFFSET ?', $bindings);
+		// Крошки
+		$breadcrumbs = Breadcrumbs::getBreadcrumbs($id);
 		$this->setMeta($category['title'] . " - Товары категории", $category['description'], $category['keywords']);
-		$this->setData(compact('products'));
+		$this->setData(compact('products', 'breadcrumbs', 'total', 'pagination'));
 	}
 }
