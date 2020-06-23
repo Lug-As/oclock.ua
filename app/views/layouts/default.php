@@ -56,7 +56,8 @@
                         <img src="images/cart-1.png" alt="">
                         <div class="total">
 									<?php if (isset($_SESSION['cart']['sum']) and $_SESSION['cart']['sum'] > 0): ?>
-                               <span class="simpleCart_total" id="top_cart_price"><?= \app\controllers\CurrencyController::getPriceString($_SESSION['cart']['sum']); ?></span>
+                               <span class="simpleCart_total"
+                                     id="top_cart_price"><?= \app\controllers\CurrencyController::getPriceString($_SESSION['cart']['sum']); ?></span>
 									<?php else: ?>
                                <span class="simpleCart_total" id="top_cart_price">Empty Cart</span>
 									<?php endif; ?>
@@ -104,14 +105,7 @@
 <?php if (!empty($_SESSION['errors'])): ?>
     <div class="errors">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-danger">
-							  <?php debug($_SESSION['errors']);
-							  unset($_SESSION['errors']); ?>
-                    </div>
-                </div>
-            </div>
+			  <?php getErrors(); ?>
         </div>
     </div>
 <?php endif; ?>
@@ -191,7 +185,6 @@
                 <h4 class="modal-title" id="myModalLabel">Корзина</h4>
             </div>
             <div class="modal-body">
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>

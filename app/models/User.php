@@ -48,8 +48,7 @@ class User extends AppModel
 		$id = $_COOKIE['user_id'];
 		$hash = $_COOKIE['user_hash'];
 		if (checkUserHash($id, $hash)) {
-			setcookie('user_id', $id, time() + 60 * 60 * 24 * 30, "/");
-			setcookie('user_hash', $hash, time() + 60 * 60 * 24 * 30, "/", null, false, true);
+			User::cookie($id, $hash);
 			App::$app->setProperty('user_id', $id);
 			if (!key_exists('user', $_SESSION)) {
 				$user = R::load('user', $id);
@@ -60,11 +59,21 @@ class User extends AppModel
 			if (key_exists('user', $_SESSION)) {
 				unset($_SESSION['user']);
 			}
-			setcookie('user_id', 0, time() - 3600, "/");
-			setcookie('user_hash', 0, time() - 3600, "/");
+			User::uncookie();
 			header("Refresh: 0");
 			die;
 		}
+	}
+
+	public static function cookie($id, $hash, $time = 3600 * 24 * 30)
+	{
+		setcookie('user_id', $id, time() + $time, "/");
+		setcookie('user_hash', $hash, time() + $time, "/", null, false, true);
+	}
+
+	public static function uncookie()
+	{
+		self::cookie(false, false, -3600);
 	}
 
 	public function checkUnique()
@@ -87,19 +96,23 @@ class User extends AppModel
 		return true;
 	}
 
-	public function login($data)
+	public function login($data, $isAdmin = false)
 	{
-		if (!key_exists('login', $data) or trim($data['login']) === "") {
-			$this->errors['login'][] = "Введите логин";
+		if (!isset($data['login']) or trim($data['login']) === "") {
+			$this->errors[] = "Введите логин";
 			return false;
 		}
-		if (!key_exists('password', $data) or trim($data['password']) === "") {
-			$this->errors['password'][] = "Введите пароль";
+		if (!isset($data['password']) or trim($data['password']) === "") {
+			$this->errors[] = "Введите пароль";
 			return false;
 		}
 		$login = trim($data['login']);
 		$password = $data['password'];
-		$user = R::findOne('user', "`login` = ?", [$login]);
+		if ($isAdmin) {
+			$user = R::findOne('user', "`login` = ? AND `role` = 'admin'", [$login]);
+		} else {
+			$user = R::findOne('user', "`login` = ?", [$login]);
+		}
 		if (!$user) {
 			$this->errors['login'][] = "Такого логина не существует";
 			return false;
@@ -109,11 +122,11 @@ class User extends AppModel
 			return false;
 		}
 		$hash = generate_hash();
-		$user->hash = $hash;
-		$id = R::store($user);
+		$user->hash = $hash; // Обновляем
+		$id = R::store($user); // и сохраняем хэш
 		if ($id) {
-			setcookie('user_id', $id, time() + 60 * 60 * 24 * 30, "/");
-			setcookie('user_hash', $hash, time() + 60 * 60 * 24 * 30, "/", null, false, true);
+			User::cookie($id, $hash);
+			unset($user->password);
 			$_SESSION['user'] = $user;
 		}
 		return true;

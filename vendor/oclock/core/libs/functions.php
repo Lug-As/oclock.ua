@@ -55,3 +55,31 @@ function checkUserHash($id, $hash)
 	}
 	return false;
 }
+
+function getErrors()
+{
+	if (key_exists('errors', $_SESSION)): ?>
+       <div class="row">
+           <div class="col-md-12">
+               <div class="alert" role="alert">
+                   <ul class='list-group'>
+							 <?php getErrorsList($_SESSION['errors']); ?>
+                   </ul>
+               </div>
+           </div>
+       </div>
+		<?php
+		unset($_SESSION['errors']);
+	endif;
+}
+
+function getErrorsList($errors)
+{
+    foreach ($errors as $error) {
+        if (is_array($error)) {
+            getErrorsList($error);
+        } else {
+            echo "<li class='list-group-item list-group-item-danger'>{$error}</li>";
+        }
+    }
+}

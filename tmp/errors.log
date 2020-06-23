@@ -650,3 +650,18 @@
 [2020-06-20 16:02:29]
     Текст ошибки: Страница oclock.ua/favicon.ico не найдена | Файл: D:\openserver\OSPanel\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 46
 =====================
+[2020-06-23 12:09:54]
+    Текст ошибки: Страница oclock.ua/fonts/glyphicons-halflings-regular.woff2 не найдена | Файл: D:\openserver\OSPanel\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 46
+=====================
+[2020-06-23 12:09:54]
+    Текст ошибки: Страница oclock.ua/fonts/glyphicons-halflings-regular.woff не найдена | Файл: D:\openserver\OSPanel\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 46
+=====================
+[2020-06-23 12:09:54]
+    Текст ошибки: Страница oclock.ua/fonts/glyphicons-halflings-regular.ttf не найдена | Файл: D:\openserver\OSPanel\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 46
+=====================
+[2020-06-23 12:47:37]
+    Текст ошибки: Страница oclock.ua/favicon.ico не найдена | Файл: D:\openserver\OSPanel\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 46
+=====================
+[2020-06-23 12:58:14]
+    Текст ошибки: Контроллер LoginController не найден | Файл: D:\openserver\OSPanel\domains\oclock.ua\vendor\oclock\core\Router.php | Строка: 43
+=====================
